@@ -58,7 +58,7 @@ outputs:
           run:
             - pytest
         files:
-          recipe:
+          source:
             - tests/__init__.py
             - tests/test_minimal.py
             - tests/util_test.py

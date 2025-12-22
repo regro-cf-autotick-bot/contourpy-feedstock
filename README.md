@@ -9,11 +9,12 @@ Package license: BSD-3-Clause
 
 Summary: Python library for calculating contours of 2D quadrilateral grids.
 
-Documentation: https://contourpy.readthedocs.io
+Development: https://github.com/contourpy/contourpy
+
+Documentation: https://contourpy.readthedocs.io/
 
 ContourPy is a Python library for calculating contours of 2D quadrilateral
 grids.  It is written in C++11 and wrapped using pybind11.
-
 
 Current build status
 ====================

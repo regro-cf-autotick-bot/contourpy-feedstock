@@ -18,9 +18,6 @@ build:
 outputs:
   - package:
       name: contourpy
-    build:
-      script:
-        - python -m pip install . --no-deps -vv
     requirements:
       build:
         - ${{ compiler('cxx') }}

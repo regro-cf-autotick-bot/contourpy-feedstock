@@ -3,15 +3,11 @@ set -ex
 
 echo $MESON_ARGS
 
-mkdir builddir
-
 if [[ -f "$BUILD_PREFIX/meson_cross_file.txt" ]];
 then
     # HACK: extend meson_cross_file to use host python;
     # requires that [binaries] section is last in meson_cross_file
-    ls -l $BUILD_PREFIX/meson_cross_file.txt
     echo "python = '${PREFIX}/bin/python'" >> $BUILD_PREFIX/meson_cross_file.txt
-    ls -l $BUILD_PREFIX/meson_cross_file.txt
     cat $BUILD_PREFIX/meson_cross_file.txt
 fi
 

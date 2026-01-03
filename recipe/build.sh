@@ -5,22 +5,15 @@ echo $MESON_ARGS
 
 mkdir builddir
 
-# Based on scipy-feedstock:
-# HACK: extend $CONDA_PREFIX/meson_cross_file that's created in
-# https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/recipe/activate-gcc.sh
-# https://github.com/conda-forge/clang-compiler-activation-feedstock/blob/main/recipe/activate-clang.sh
-# to use host python; requires that [binaries] section is last in meson_cross_file
-#echo "python = '${PREFIX}/bin/python'" >> ${CONDA_PREFIX}/meson_cross_file.txt
-
-
-
 if [[ -f "$BUILD_PREFIX/meson_cross_file.txt" ]];
 then
+    # HACK: extend meson_cross_file to use host python;
+    # requires that [binaries] section is last in meson_cross_file
+    ls -l $BUILD_PREFIX/meson_cross_file.txt
+    echo "python = '${PREFIX}/bin/python'" >> $BUILD_PREFIX/meson_cross_file.txt
     ls -l $BUILD_PREFIX/meson_cross_file.txt
     cat $BUILD_PREFIX/meson_cross_file.txt
 fi
-
-
 
 $PYTHON -m pip install . -vv --no-build-isolation --no-deps \
     -Cbuilddir=builddir \

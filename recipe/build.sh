@@ -12,7 +12,7 @@ mkdir builddir
 # to use host python; requires that [binaries] section is last in meson_cross_file
 #echo "python = '${PREFIX}/bin/python'" >> ${CONDA_PREFIX}/meson_cross_file.txt
 
-cat ${CONDA_PREFIX}/meson_cross_file.txt
+#cat ${CONDA_PREFIX}/meson_cross_file.txt
 
 $PYTHON -m pip install . -vv --no-build-isolation --no-deps \
     -Cbuilddir=builddir \
